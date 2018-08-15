@@ -237,9 +237,9 @@ def optimize_image(layer_tensor, image, face_image,
         # When the colour-channel is also blurred the colours of the
         # input image are mostly retained in the output image.
         '''sigma = (i * 4.0) / num_iterations + 0.5
-        grad_smooth1 = gaussian_filter(grad, sigma=sigma)
-        grad_smooth2 = gaussian_filter(grad, sigma=sigma*2)
-        grad_smooth3 = gaussian_filter(grad, sigma=sigma*0.5)
+        grad_smooth1 = gaussian_filter(grad, sigma=(sigma, sigma, 0.0))
+        grad_smooth2 = gaussian_filter(grad, sigma=(sigma*2, sigma*2, 0.0))
+        grad_smooth3 = gaussian_filter(grad, sigma=(sigma*0.5, sigma*0.5, 0.0))
         grad = (grad_smooth1 + grad_smooth2 + grad_smooth3)'''
 
         # Scale the step-size according to the gradient-values.
@@ -261,7 +261,7 @@ def optimize_image(layer_tensor, image, face_image,
         else:
             # Otherwise show a little progress-indicator.
             print(". ", end="")
-    return img
+    return (img, face_img)
 
 
 def recursive_optimize(layer_tensor, image, face_image,
@@ -320,7 +320,7 @@ def recursive_optimize(layer_tensor, image, face_image,
 
         # Recursive call to this function.
         # Subtract one from num_repeats and use the downscaled image.
-        img_result = recursive_optimize(layer_tensor=layer_tensor,
+        img_result, face_img_result = recursive_optimize(layer_tensor=layer_tensor,
                                         image=img_downscaled,
                                         face_image=face_img_downscaled,
                                         num_repeats=num_repeats-1,
@@ -333,17 +333,17 @@ def recursive_optimize(layer_tensor, image, face_image,
         # Upscale the resulting image back to its original size.
         img_upscaled = resize_image(image=img_result, size=image.shape)
 
-        face_img_upscaled = resize_image(image=img_result, size=face_image.shape)
+        face_img_upscaled = resize_image(image=face_img_result, size=face_image.shape)
 
         # Blend the original and processed images.
         image = blend * image + (1.0 - blend) * img_upscaled
 
-        face_image = blend * image + (1.0 - blend) *img_upscaled
+        face_image = blend * face_image + (1.0 - blend) * face_img_upscaled
 
     print("Recursive level:", num_repeats)
 
     # Process the image using the DeepDream algorithm.
-    img_result = optimize_image(layer_tensor=layer_tensor,
+    img_result, face_img_result = optimize_image(layer_tensor=layer_tensor,
                                 image=image,
                                 face_image=face_image,
                                 num_iterations=num_iterations,
@@ -351,4 +351,4 @@ def recursive_optimize(layer_tensor, image, face_image,
                                 tile_size=tile_size,
                                 show_gradient=False)
 
-    return img_result
+    return (img_result, face_img_result)
