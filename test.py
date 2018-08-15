@@ -22,6 +22,7 @@ Have facial recognition run on each image and save pre-processed image
 imgname = 'horror.jpg'
 img = load_image('input/' + imgname)
 
+#Known working facial recognition
 def preprocess(filename, fileout="face.jpg"):
     #Use Haar Cascade to Classify face
     face_cascade = cv.CascadeClassifier('opencv/haarcascade_frontalface_default.xml')

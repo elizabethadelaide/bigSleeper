@@ -1,3 +1,8 @@
+'''
+Elizabeth Adelaide 2018
+Use facial recognition to distort faces in Images with deep dream
+'''
+
 from faceDream import model, load_image, recursive_optimize
 from facialPreProcess as fPP
 

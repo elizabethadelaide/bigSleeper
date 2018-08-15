@@ -45,6 +45,13 @@ class Face:
         self.outname = 'preprocess/' + imgname
         self.preprocess()
 
+    #change the image to process
+    def process(self, imgname):
+        self.imgname = 'input/' + imgname
+        self.outname = 'preprocess/' + imgname
+        self.preprocess()
+
+    #Getters:
     def getFaces(self):
         return self.faces
     def getOutname(self):
@@ -52,6 +59,11 @@ class Face:
     def getProcessedImage(self):
         return self.processedImage
 
+    #TODO: Add processing to get subimages of image
+    #for each face, return x,y,w,h and ndarrays of subimages
+    #will have to see if that will be helpful
+
+    #Main processing function, internal:
     def preprocess(self):
 
         #Use Haar Cascade to Classify face
