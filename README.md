@@ -25,8 +25,8 @@ Playing with the options a bit can get more horrifying
 
 Videos are made by processing each image independenently as a sequence.
 
-[![Link to youtube](http://img.youtube.com/vi/https://youtu.be/C7i4bdkKbvE/0.jpg)](http://www.youtube.com/watch?v=https://youtu.be/C7i4bdkKbvE "Example clip")
+[![Link to youtube for clip](http://img.youtube.com/vi/C7i4bdkKbvE/0.jpg)](http://www.youtube.com/watch?v=C7i4bdkKbvE "Basic Clip of Deep Dreamer")
 
 Also generated is the window of the facial recognition, which has interesting results.
 
-[![Link to youtube](http://img.youtube.com/vi/https://youtu.be/https://youtu.be/T51XGUskI3Y/0.jpg)](http://www.youtube.com/watch?v=https://youtu.be/https://youtu.be/T51XGUskI3Y "Example clip")
+[![Link to youtube for facial window](http://img.youtube.com/vi/T51XGUskI3Y/0.jpg)](http://www.youtube.com/watch?v=T51XGUskI3Y "Facial Window")
