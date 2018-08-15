@@ -68,12 +68,6 @@ class faceTest(unittest.TestCase):
         for x in range(imgA.size):
             self.assertEqual(imgA.item(x), imgB.item(x))
 
-    def test_rectangles(self):
-        #get rectangle objects
-        rects = myFaceObj.getFaces()
-
-        self.assertEqual(rects.shape, (1, 4)) #should be the shape of this object for now
-
     def test_faceReturn(self):
         myface = preprocess(imgname)
 

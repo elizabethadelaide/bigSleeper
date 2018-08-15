@@ -219,7 +219,7 @@ def optimize_image(layer_tensor, image, face_image,
     img = image.copy()
     face_img = face_image.copy()
 
-    print("Doing deep deep dream: ")
+    #print("Doing deep deep dream: ")
 
     # Use TensorFlow to get the mathematical function for the
     # gradient of the given layer-tensor with regard to the
@@ -268,7 +268,7 @@ def optimize_image(layer_tensor, image, face_image,
             plot_gradient(grad)
         else:
             # Otherwise show a little progress-indicator.
-            print(". ", end="")
+            #print(". ", end="")
     return (img, face_img)
 
 
@@ -348,7 +348,7 @@ def recursive_optimize(layer_tensor, image, face_image,
 
         face_image = blend * face_image + (1.0 - blend) * face_img_upscaled
 
-    print("Recursive level:", num_repeats)
+    #print("Recursive level:", num_repeats)
 
     # Process the image using the DeepDream algorithm.
     img_result, face_img_result = optimize_image(layer_tensor=layer_tensor,
