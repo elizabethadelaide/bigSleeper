@@ -5,7 +5,7 @@ In progress. Contains utilities in bin/deepDream.py. Testing-driven development 
 
 Basic Deep Dream image, from a space image
 
-![Flowers](images/deepDream.png)
+![Flowers](images/basicDeepDream.jpeg)
 
 Current concept for this project is to particularly target faces in images, and to create horror images, and eventually short videos. The current flow is to preprocess images and isolate faces in images using a opencv Haar filter:
 
