@@ -13,4 +13,4 @@ Current concept for this project is to particularly target faces in images, and 
 
 Then use that face image as the input for the deep dream algorithm to calculate the gradient of the image. After getting the optimized value based on the gradient and the layer tensor, apply the value to the original image. This will cause the algorithm to respond to values within the facial box, distorting facial features. Outside the facial boxes, the algorithm will be agnostic to features.
 
-![A very creepy image[(images/deepDream.jpg)
+![A very creepy image[(images/deepDream.png)
