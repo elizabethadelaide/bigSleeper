@@ -1,7 +1,7 @@
 # bigSleeper
 Deep Dreaming Experimenting in Python
 
-In progress. Contains utilities in bin/deepDream.py. Testing-driven development being built using nose. Tensorflow and opencv as main libraries.
+Uses tensorflow and opencv to create deep dream images and videos with facial recognition. Uses nose2 and unittest for testdriven development for some aspects of the program.
 
 Basic Deep Dream image, from a space image
 
