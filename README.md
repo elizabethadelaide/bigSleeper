@@ -1,7 +1,7 @@
 # bigSleeper
 Deep Dreaming Experimenting in Python
 
-Uses tensorflow and opencv to create deep dream images and videos with facial recognition. Uses nose2 and unittest for testdriven development for some aspects of the program.
+Uses tensorflow and opencv to create deep dream images and videos with facial recognition. Uses nose2 and unittest for testdriven development for some aspects of the program. Uses Inception5h as deep dream training data.
 
 Basic Deep Dream image, from a space image
 
