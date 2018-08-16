@@ -23,7 +23,7 @@ Playing with the options a bit can get more horrifying
 
 # Video
 
-Videos are made by processing each image independenently as a sequence.
+Videos are made by processing each image indepedently as a sequence.
 
 [![Link to youtube for clip](http://img.youtube.com/vi/C7i4bdkKbvE/0.jpg)](http://www.youtube.com/watch?v=C7i4bdkKbvE "Basic Clip of Deep Dreamer")
 
