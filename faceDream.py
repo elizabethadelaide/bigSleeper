@@ -244,11 +244,11 @@ def optimize_image(layer_tensor, image, face_image,
         # give psychadelic / pastel colours in the resulting images.
         # When the colour-channel is also blurred the colours of the
         # input image are mostly retained in the output image.
-        '''sigma = (i * 4.0) / num_iterations + 0.5
-        grad_smooth1 = gaussian_filter(grad, sigma=(sigma, sigma, 0.0))
-        grad_smooth2 = gaussian_filter(grad, sigma=(sigma*2, sigma*2, 0.0))
-        grad_smooth3 = gaussian_filter(grad, sigma=(sigma*0.5, sigma*0.5, 0.0))
-        grad = (grad_smooth1 + grad_smooth2 + grad_smooth3)'''
+        sigma = (i * 4.0) / num_iterations + 0.5
+        grad_smooth1 = gaussian_filter(grad, sigma=(sigma, sigma, sigma))
+        grad_smooth2 = gaussian_filter(grad, sigma=(sigma*2, sigma*2, sigma*2))
+        grad_smooth3 = gaussian_filter(grad, sigma=(sigma*0.5, sigma*0.5, sigma*0.5))
+        grad = (grad_smooth1 + grad_smooth2 + grad_smooth3)
 
         # Scale the step-size according to the gradient-values.
         # This may not be necessary because the tiled-gradient
@@ -266,7 +266,7 @@ def optimize_image(layer_tensor, image, face_image,
 
             # Plot the gradient.
             plot_gradient(grad)
-        else:
+        #else:
             # Otherwise show a little progress-indicator.
             #print(". ", end="")
     return (img, face_img)

@@ -22,8 +22,8 @@ def video2image(videoName):
         cv.imwrite(filename, image)
         success, image = vidcap.read()
         count += 1
-        print("Frame %d" % count)
-    print("Wrote %d to file" % count)
+        #print("Frame %d" % count)
+    return count
 
 def image2video(rootdir, width, height, videoName):
     video = cv.VideoWriter(videoName, -1, 1, (width, height))

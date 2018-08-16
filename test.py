@@ -51,6 +51,18 @@ def preprocess(filename, fileout="face.jpg"):
 
 myFaceObj = face.Face(imgname) #init face object with image
 
+#TODO: Add class to go through adding alternatives gaussian filter smoothing
+'''
+The goal is to have filters and optimizations that maximally distort high gradient areas
+And minimally distort low gradient areas
+
+I know an implementation of Laplace that I want to try
+
+I also want to have better and more noticeable color distortions in less loops (i.e. increase efficiency)
+
+This testing class would also be helpful for increasing real efficiency
+'''
+
 #test facial recognition while refactoring
 #be able to get up to video recognition
 class faceTest(unittest.TestCase):
