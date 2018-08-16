@@ -7,13 +7,13 @@ Basic Deep Dream image, from a space image
 
 ![Flowers](images/basicDeepDream.jpeg)
 
-# Still Images
+# Image processing
 
-Current concept for this project is to particularly target faces in images, and to create horror images, and eventually short videos. The current flow is to preprocess images and isolate faces in images using a opencv Haar filter:
+Each image is first processes using a Haas filter with for both frontal and profile facial features. The detected facial rectangles are isolated and saved into separated images.
 
 ![Just a face](preprocess/face.jpg)
 
-Then use that face image as the input for the deep dream algorithm to calculate the gradient of the image. After getting the optimized value based on the gradient and the layer tensor, apply the value to the original image. This will cause the algorithm to respond to values within the facial box, distorting facial features. Outside the facial boxes, the algorithm will be agnostic to features.
+That face image is used for the deep dream algorithm to calculate the gradient of the image. After getting the optimized value based on the gradient and the layer tensor, apply the value to the original image. This will cause the algorithm to respond to values within the facial box, distorting facial features. The algorithm will be agnostic to features outside of the facial rectangle.
 
 ![A very creepy image](images/dream_image_out.jpg)
 
