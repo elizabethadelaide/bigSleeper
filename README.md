@@ -9,7 +9,7 @@ Basic Deep Dream image, from a space image
 
 # Image processing
 
-Each image is first processes using a Haas filter with for both frontal and profile facial features. The detected facial rectangles are isolated and saved into separated images.
+Each image is first processes using a Haar filter with for both frontal and profile facial features. The detected facial rectangles are isolated and saved into separated images.
 
 ![Just a face](preprocess/face.jpg)
 
